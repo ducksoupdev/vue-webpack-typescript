@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ name }}</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!-- build:css css/main.min.css -->
+  <link rel="stylesheet" href="../dist/css/main.css">
+  <!-- /build -->
+</head>
+
+<body>
+
+<div id="app-main">
+  <navbar :inverted="false"></navbar>
+  <router-view>loading...</router-view>
+</div>
+
+<!-- build:js js/main.min.js -->
+<script src="../dist/js/main.js"></script>
+<!-- /build -->
+
+</body>
+</html>
