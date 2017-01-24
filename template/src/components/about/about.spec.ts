@@ -38,7 +38,7 @@ describe('About component', () => {
     it('should render correct contents', (done) => {
         directiveTest.createComponent();
         directiveTest.execute((vm) => {
-            expect(vm.$el.querySelector('.repo-link').getAttribute('href')).toBe('https://github.com/ducksoupdev/vue-typescript-seed');
+            expect(vm.$el.querySelector('.repo-link').getAttribute('href')).toBe('https://github.com/ducksoupdev/vue-webpack-typescript');
             expect(infoLoggerSpy).toHaveBeenCalledWith('about is ready!');
             done();
         });

@@ -6,7 +6,7 @@ import Component from 'vue-class-component';
 })
 export class HomeComponent extends Vue {
 
-    package: string = 'vue-typescript-seed';
+    package: string = 'vue-webpack-typescript';
     repo: string = 'https://github.com/ducksoupdev/vue-webpack-typescript';
 
 }

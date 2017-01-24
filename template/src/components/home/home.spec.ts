@@ -10,6 +10,6 @@ describe('Home component', () => {
 
     it('should render correct contents', () => {
         directiveTest.createComponent();
-        expect(directiveTest.vm.$el.querySelector('.package').textContent).toBe('vue-typescript-seed');
+        expect(directiveTest.vm.$el.querySelector('.package').textContent).toBe('vue-webpack-typescript');
     });
 });
