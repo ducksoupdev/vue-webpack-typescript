@@ -8,8 +8,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li v-for="link in links" v-bind:class="{'active' : $route.path == link.path}"><router-link v-bind:to="link.path">{{link.name}}</router-link></li>
+                <li v-for="link in links" v-bind:class="{'active' : $route.path == link.path}">
+                  <router-link v-bind:to="link.path">\{{link.name}}</router-link>
+                </li>
             </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </div>
+    </div>
 </nav>

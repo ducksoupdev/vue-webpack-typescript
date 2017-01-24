@@ -8,7 +8,7 @@ import {Logger} from '../../util/log';
 export class AboutComponent extends Vue {
 
     private logger: Logger;
-    repo: string = 'https://github.com/ducksoupdev/vue-typescript-seed';
+    repo: string = 'https://github.com/ducksoupdev/vue-webpack-typescript';
 
     mounted() {
         if (!this.logger) this.logger = new Logger();
