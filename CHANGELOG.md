@@ -14,6 +14,9 @@
 *  Add clean-css-cli dependency which was missing [#1]
 
 
-## [v0.1.0] (2017-01-24)
+## v0.1.0 (2017-01-24)
 
 *  Initial release
+
+[v0.2.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.1.1...v0.2.0
+[v0.1.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.1.0...v0.1.1
