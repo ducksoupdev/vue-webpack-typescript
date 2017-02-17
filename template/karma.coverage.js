@@ -8,9 +8,25 @@ var args = parseArgs(process.argv.slice(2), {
   }
 });
 
-webpackConfig.module.postLoaders = [
+webpackConfig.module.rules = [
+  { test: /\.ts$/,
+    exclude: /node_modules/,
+    loader: "ts-loader",
+    query: {
+      compilerOptions: {
+        inlineSourceMap: true,
+        sourceMap: false
+      }
+    }
+  },
+  { 
+    test: /\.html$/, 
+    loader: 'raw-loader', 
+    exclude: [ './src/index.html' ] 
+  },
   {
     test: /\.ts$/,
+    enforce: "post",
     loader: 'istanbul-instrumenter-loader',
     exclude: [
       'node_modules',
@@ -45,13 +61,7 @@ module.exports = function (config) {
     webpack: {
       devtool: 'inline-source-map',
       resolve: webpackConfig.resolve,
-      module: webpackConfig.module,
-      ts: {
-        compilerOptions: {
-          inlineSourceMap: true,
-          sourceMap: false
-        }
-      }
+      module: webpackConfig.module
     },
     webpackServer: {noInfo: true},
     junitReporter: {
