@@ -30,7 +30,6 @@
   },
   "devDependencies": {
     "@types/axios": "^0.9.34",
-    "@types/es6-promise": "0.0.32",
     "@types/jasmine": "^2.5.40",
     "@types/jquery": "^2.0.39",
     "@types/node": "^6.0.60",
