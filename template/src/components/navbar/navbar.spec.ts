@@ -1,5 +1,5 @@
 import * as Vue from 'vue';
-import * as VueRouter from 'vue-router';
+import VueRouter from 'vue-router';
 import {ComponentTest} from '../../util/component-test';
 import {ILogger} from '../../util/log';
 
