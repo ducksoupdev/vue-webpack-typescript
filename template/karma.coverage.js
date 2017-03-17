@@ -8,8 +8,8 @@ var args = parseArgs(process.argv.slice(2), {
   }
 });
 
-webpackConfig.module.rules = [
-  { test: /\.ts$/,
+webpackConfig.module.rules = [{
+    test: /\.ts$/,
     exclude: /node_modules/,
     loader: "ts-loader",
     query: {
@@ -19,10 +19,10 @@ webpackConfig.module.rules = [
       }
     }
   },
-  { 
-    test: /\.html$/, 
-    loader: 'raw-loader', 
-    exclude: [ './src/index.html' ] 
+  {
+    test: /\.html$/,
+    loader: 'raw-loader',
+    exclude: ['./src/index.html']
   },
   {
     test: /\.ts$/,
@@ -31,12 +31,14 @@ webpackConfig.module.rules = [
     exclude: [
       'node_modules',
       /\.spec\.ts$/
-    ]
+    ],
+    query: {
+      esModules: true
+    }
   }
 ];
 
 var reporters = ['mocha', 'coverage'];
-var browsers = ['PhantomJS'];
 
 if (args.env === 'tc') {
   reporters = ['teamcity', 'coverage'];
@@ -63,7 +65,9 @@ module.exports = function (config) {
       resolve: webpackConfig.resolve,
       module: webpackConfig.module
     },
-    webpackServer: {noInfo: true},
+    webpackServer: {
+      noInfo: true
+    },
     junitReporter: {
       outputDir: 'reports/'
     },
@@ -78,7 +82,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    browsers: browsers,
+    browsers: ['PhantomJS'],
     singleRun: true
   });
 };

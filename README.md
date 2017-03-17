@@ -19,5 +19,10 @@ $ npm run dev
 ### What's Included
 
 - `npm run dev`: Webpack + Typescript with proper config for source maps & hot-reload.
-- `npm test`: Jasmine-based tests and Karma coverage reporter
+- `npm test`: Jasmine-based tests
+- `npm run test-watch`: Jasmine-based tests with hot-reload
+- `npm run coverage`: Karma coverage reporter
+- `npm run lint`: Lint all Typescript files
 - `npm run build`: build with HTML/CSS/JS minification.
+- `npm run ci-teamcity`: Teamcity CI integration
+- `npm run ci-jenkins`: Jenkins CI integration

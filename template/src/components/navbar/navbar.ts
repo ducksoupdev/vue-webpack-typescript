@@ -1,4 +1,4 @@
-import * as Vue from 'vue';
+import Vue from 'vue';
 import { Component, watch } from 'vue-property-decorator';
 import { Link } from './link';
 import { Logger } from '../../util/log';
@@ -8,7 +8,7 @@ import { Logger } from '../../util/log';
 })
 export class NavbarComponent extends Vue {
 
-    private logger: Logger;
+    protected logger: Logger;
 
     inverted: boolean = true; // default value
 

@@ -1,6 +1,6 @@
-import * as Vue from 'vue';
+import Vue from 'vue';
 import Component from 'vue-class-component';
-import * as axios from 'axios';
+import axios, {AxiosResponse} from 'axios';
 
 interface UserResponse {
     id: string;
@@ -14,6 +14,12 @@ export class ListComponent extends Vue {
 
     items: UserResponse[] = [];
     private url = 'https://jsonplaceholder.typicode.com/users';
+    protected axios;
+
+    constructor() {
+      super();
+      this.axios = axios;
+    }
 
     mounted() {
         this.$nextTick(() => {
@@ -23,7 +29,7 @@ export class ListComponent extends Vue {
 
     private loadItems() {
         if (!this.items.length) {
-            axios.get(this.url).then((response: Axios.AxiosXHR<UserResponse[]>) => {
+            this.axios.get(this.url).then((response: AxiosResponse) => {
                 this.items = response.data;
             }, (error) => {
                 console.error(error);

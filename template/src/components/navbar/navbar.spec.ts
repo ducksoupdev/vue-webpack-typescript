@@ -1,42 +1,29 @@
-import * as Vue from 'vue';
+import Vue from 'vue';
 import VueRouter from 'vue-router';
-import {ComponentTest} from '../../util/component-test';
+import Component from 'vue-class-component';
+import {ComponentTest, MockLogger} from '../../util/component-test';
 import {ILogger} from '../../util/log';
+import { NavbarComponent } from './navbar';
+
+let loggerSpy = jasmine.createSpy('loggerInfo');
+
+@Component({
+    template: require('./navbar.html')
+})
+class MockNavbarComponent extends NavbarComponent {
+  constructor() {
+    super();
+    this.logger = new MockLogger(loggerSpy);
+  }
+}
 
 describe('Navbar component', () => {
-    // ensure component is loaded into webpack
-    // modules loaded using es6 imports (as above) that are not used are removed through transpilation
-    let navbarComponent = require('./navbar');
-
     let directiveTest: ComponentTest;
-    let navbarComponentInjector: any;
     let router: VueRouter;
-    let infoLoggerSpy = jasmine.createSpy('loggerInfo');
-
-    class MockLogger implements ILogger {
-        info(msg: any) {
-            infoLoggerSpy(msg);
-        }
-
-        warn(msg: any) {
-            infoLoggerSpy(msg);
-        }
-
-        error(msg: any) {
-            infoLoggerSpy(msg);
-        }
-    }
 
     beforeAll(() => {
         Vue.use(VueRouter);
-
-        navbarComponentInjector = require('inject-loader!./navbar'); // load the module from the webpack bundle
-
-        let mockNavbarComponent = navbarComponentInjector({
-            '../../util/log': { Logger: MockLogger }
-        }).NavbarComponent;
-
-        directiveTest = new ComponentTest('<div><navbar></navbar><router-view>loading...</router-view></div>', { 'navbar': mockNavbarComponent });
+        directiveTest = new ComponentTest('<div><navbar></navbar><router-view>loading...</router-view></div>', { 'navbar': MockNavbarComponent });
 
         let homeComponent = { template: '<div class="home">Home</div>' };
         let aboutComponent = { template: '<div class="about">About</div>' };
@@ -55,7 +42,7 @@ describe('Navbar component', () => {
         directiveTest.createComponent({ router: router });
 
         directiveTest.execute((vm) => { // ensure Vue has bootstrapped/run change detection
-            expect(infoLoggerSpy).toHaveBeenCalledWith('Default object property!');
+            expect(loggerSpy).toHaveBeenCalledWith('Default object property!');
             expect(vm.$el.querySelectorAll('ul.nav li').length).toBe(3);
             done();
         });

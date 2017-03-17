@@ -1,46 +1,34 @@
-import * as Vue from 'vue';
-import {ComponentTest} from '../../util/component-test';
-import {ILogger} from '../../util/log';
+import Vue from 'vue';
+import Component from 'vue-class-component';
+import { ComponentTest, MockLogger } from '../../util/component-test';
+import { ILogger } from '../../util/log';
+import { AboutComponent } from './about';
+
+let loggerSpy = jasmine.createSpy('loggerInfo');
+
+@Component({
+    template: require('./about.html')
+})
+class MockAboutComponent extends AboutComponent {
+  constructor() {
+    super();
+    this.logger = new MockLogger(loggerSpy);
+  }
+}
 
 describe('About component', () => {
-    // ensure component is loaded into webpack
-    // modules loaded using es6 imports (as above) that are not used are removed through transpilation
-    let aboutComponent = require('./about');
+  let directiveTest: ComponentTest;
 
-    let directiveTest: ComponentTest;
-    let aboutComponentInjector: any;
-    let infoLoggerSpy = jasmine.createSpy('loggerInfo');
+  beforeEach(() => {
+    directiveTest = new ComponentTest('<div><about></about></div>', { 'about': MockAboutComponent });
+  });
 
-    class MockLogger implements ILogger {
-        info(msg: any) {
-            infoLoggerSpy(msg);
-        }
-
-        warn(msg: any) {
-            infoLoggerSpy(msg);
-        }
-
-        error(msg: any) {
-            infoLoggerSpy(msg);
-        }
-    }
-
-    beforeEach(() => {
-        aboutComponentInjector = require('inject-loader!./about'); // load the module from the webpack bundle
-
-        let mockAboutComponent = aboutComponentInjector({
-            '../../util/log': { Logger: MockLogger }
-        }).AboutComponent;
-
-        directiveTest = new ComponentTest('<div><about></about></div>', { 'about': mockAboutComponent });
+  it('should render correct contents', (done) => {
+    directiveTest.createComponent();
+    directiveTest.execute((vm) => {
+      expect(vm.$el.querySelector('.repo-link').getAttribute('href')).toBe('https://github.com/ducksoupdev/vue-webpack-typescript');
+      expect(loggerSpy).toHaveBeenCalledWith('about is ready!');
+      done();
     });
-
-    it('should render correct contents', (done) => {
-        directiveTest.createComponent();
-        directiveTest.execute((vm) => {
-            expect(vm.$el.querySelector('.repo-link').getAttribute('href')).toBe('https://github.com/ducksoupdev/vue-webpack-typescript');
-            expect(infoLoggerSpy).toHaveBeenCalledWith('about is ready!');
-            done();
-        });
-    });
+  });
 });

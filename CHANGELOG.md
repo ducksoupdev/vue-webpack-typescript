@@ -1,5 +1,18 @@
 # Change log
 
+## [v0.4.0] (2017-03-17)
+
+** Features **
+
+* Uplift to Vue 2.2
+* Refactor tests
+* Use es2015 style imports
+
+** Fixes **
+
+* Vue router is not a constructor [#6]
+* Typescript lint task not working
+
 ## [v0.3.1] (2017-02-20)
 
 ** Features **
@@ -32,6 +45,7 @@
 
 *  Initial release
 
+[v0.4.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.3.1...v0.4.0
 [v0.3.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.2.0...v0.3.1
 [v0.3.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.1.1...v0.2.0

@@ -1,4 +1,4 @@
-import * as Vue from 'vue';
+import Vue from 'vue';
 import Component from 'vue-class-component';
 import {Logger} from '../../util/log';
 
@@ -7,7 +7,7 @@ import {Logger} from '../../util/log';
 })
 export class AboutComponent extends Vue {
 
-    private logger: Logger;
+    protected logger: Logger;
     repo: string = 'https://github.com/ducksoupdev/vue-webpack-typescript';
 
     mounted() {

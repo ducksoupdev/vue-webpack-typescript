@@ -14,6 +14,7 @@ var metadata = {
 };
 
 module.exports = {
+  stats: false,
   devtool: 'source-map', //to point console errors to ts files instead of compiled js
   entry: {
     'main': './src/main.ts', //app main file
@@ -24,15 +25,15 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js', '.html'],
     alias: {
       'vue$': 'vue/dist/vue.common.js'
     }
   },
   module: {
     rules: [
-      { test: /\.ts$/, enforce: 'pre', loader: 'tslint-loader' },
-      { test: /\.ts$/, exclude: /node_modules/, loader: "ts-loader" },
+      { test: /\.ts$/, exclude: /node_modules/, enforce: 'pre', loader: 'tslint-loader' },
+      { test: /\.ts$/, loader: 'ts-loader' },
       { test: /\.html$/, loader: 'raw-loader', exclude: [ './src/index.html' ] }
     ]
   },
