@@ -5,7 +5,7 @@
   "author": "{{ author }}",
   "private": true,
   "scripts": {
-    "build": "cross-env NODE_ENV=production npm run clean && npm run test && npm run sass && npm run build-parts && npm run clean-css && npm run process-html",
+    "build": "cross-env NODE_ENV=production npm run clean && npm run test && npm run sass && npm run copy-bs && npm run build-parts && npm run clean-css && npm run process-html",
     "build-parts": "npm run sass && npm run compile",
     "ci-teamcity": "karma --env=tc start karma.coverage.js && npm run ts-coverage-remap",
     "ci-jenkins": "karma --env=jk start karma.coverage.js && npm run ts-coverage-remap",
@@ -16,7 +16,7 @@
     "coverage": "npm run coverage-run && npm run ts-coverage-remap && npm run coverage-report-open",
     "coverage-run": "karma start karma.coverage.js",
     "coverage-report-open": "opn coverage/html-ts/index.html",
-    "dev": "cross-env NODE_ENV=development npm run sass && concurrently --kill-others \"webpack-dev-server --hot --inline\" \"node-sass --watch --output ./src/css ./src/sass\"",
+    "dev": "cross-env NODE_ENV=development npm run sass && npm run copy-bs && concurrently --kill-others \"webpack-dev-server --hot --inline\" \"node-sass --watch --output ./src/css ./src/sass\"",
     "lint": "tslint src/**/*.ts",
     "process-html": "htmlprocessor src/index.html -o dist/index.html",
     "sass": "node-sass --output ./src/css ./src/sass",

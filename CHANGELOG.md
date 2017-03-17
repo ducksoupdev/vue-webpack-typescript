@@ -1,5 +1,11 @@
 # Change log
 
+## [v0.4.1] (2017-03-17)
+
+** Fixes **
+
+* Fix missing bootstrap.css
+
 ## [v0.4.0] (2017-03-17)
 
 ** Features **
