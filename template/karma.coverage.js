@@ -1,5 +1,5 @@
 var parseArgs = require('minimist');
-var webpackConfig = require('./webpack.config');
+var webpackConfig = require('./config/webpack.config.coverage');
 
 var args = parseArgs(process.argv.slice(2), {
   string: ['env'],
@@ -7,36 +7,6 @@ var args = parseArgs(process.argv.slice(2), {
     'env': 'mocha'
   }
 });
-
-webpackConfig.module.rules = [{
-    test: /\.ts$/,
-    exclude: /node_modules/,
-    loader: "ts-loader",
-    query: {
-      compilerOptions: {
-        inlineSourceMap: true,
-        sourceMap: false
-      }
-    }
-  },
-  {
-    test: /\.html$/,
-    loader: 'raw-loader',
-    exclude: ['./src/index.html']
-  },
-  {
-    test: /\.ts$/,
-    enforce: "post",
-    loader: 'istanbul-instrumenter-loader',
-    exclude: [
-      'node_modules',
-      /\.spec\.ts$/
-    ],
-    query: {
-      esModules: true
-    }
-  }
-];
 
 var reporters = ['mocha', 'coverage'];
 
@@ -51,7 +21,7 @@ if (args.env === 'jk') {
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', 'source-map-support'],
+    frameworks: ['mocha', 'chai', 'sinon'],
     files: [
       'node_modules/es6-promise/dist/es6-promise.auto.js',
       'src/test.ts'
@@ -83,6 +53,7 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: false,
     browsers: ['PhantomJS'],
-    singleRun: true
+    singleRun: true,
+    concurrency: Infinity
   });
 };

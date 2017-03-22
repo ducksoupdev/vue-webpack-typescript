@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import {SinonSpy} from 'sinon';
 import merge from 'lodash.merge';
 import { ILogger } from './log';
 
@@ -39,7 +40,7 @@ export class ComponentTest implements IComponentTest {
 
 export class MockLogger implements ILogger {
 
-  constructor(private loggerSpy: jasmine.Spy) {
+  constructor(private loggerSpy: SinonSpy) {
   }
 
   info(msg: any) {

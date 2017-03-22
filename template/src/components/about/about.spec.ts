@@ -1,13 +1,13 @@
-import Vue from 'vue';
+import Sinon from 'sinon';
+import {expect} from 'chai';
 import Component from 'vue-class-component';
 import { ComponentTest, MockLogger } from '../../util/component-test';
-import { ILogger } from '../../util/log';
 import { AboutComponent } from './about';
 
-let loggerSpy = jasmine.createSpy('loggerInfo');
+let loggerSpy = Sinon.spy();
 
 @Component({
-    template: require('./about.html')
+  template: require('./about.html')
 })
 class MockAboutComponent extends AboutComponent {
   constructor() {
@@ -23,12 +23,12 @@ describe('About component', () => {
     directiveTest = new ComponentTest('<div><about></about></div>', { 'about': MockAboutComponent });
   });
 
-  it('should render correct contents', (done) => {
+  it('should render correct contents', async () => {
     directiveTest.createComponent();
-    directiveTest.execute((vm) => {
+
+    await directiveTest.execute((vm) => {
       expect(vm.$el.querySelector('.repo-link').getAttribute('href')).toBe('https://github.com/ducksoupdev/vue-webpack-typescript');
       expect(loggerSpy).toHaveBeenCalledWith('about is ready!');
-      done();
     });
   });
 });

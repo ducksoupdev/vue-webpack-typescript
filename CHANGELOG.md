@@ -1,5 +1,12 @@
 # Change log
 
+## [v0.5.0] (2017-03-23)
+
+** Features **
+
+* Implement mocha for unit testing
+* Split webpack configuration into multiple files
+
 ## [v0.4.1] (2017-03-17)
 
 ** Fixes **
@@ -51,6 +58,8 @@
 
 *  Initial release
 
+[v0.5.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.4.1...v0.5.0
+[v0.4.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.4.0...v0.4.1
 [v0.4.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.3.1...v0.4.0
 [v0.3.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.2.0...v0.3.1
 [v0.3.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.2.0...v0.3.0

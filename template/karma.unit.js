@@ -1,9 +1,9 @@
-var webpackConfig = require('./webpack.config');
+var webpackConfig = require('./config/webpack.config.base');
 
 module.exports = function(config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine'],
+    frameworks: ['mocha', 'chai', 'sinon'],
     files: [
       'node_modules/es6-promise/dist/es6-promise.auto.js',
       'src/test.ts'

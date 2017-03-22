@@ -1,5 +1,5 @@
-import Vue from 'vue';
 import Component from 'vue-class-component';
+import {expect} from 'chai';
 import { ComponentTest } from '../../util/component-test';
 import { ListComponent } from './list';
 
@@ -24,13 +24,11 @@ describe('List component', () => {
     directiveTest = new ComponentTest('<div><list></list></div>', { 'list': MockListComponent });
   });
 
-  it('should render correct contents', (done) => {
+  it('should render correct contents', async () => {
     directiveTest.createComponent();
-    setTimeout(() => {
-      directiveTest.execute((vm) => { // ensure Vue has bootstrapped/run change detection
-        expect(vm.$el.querySelectorAll('ul li').length).toBe(3);
-        done();
-      });
-    }, 50);
+
+    await directiveTest.execute((vm) => { // ensure Vue has bootstrapped/run change detection
+      expect(vm.$el.querySelectorAll('ul li').length).toBe(3);
+    });
   });
 });
