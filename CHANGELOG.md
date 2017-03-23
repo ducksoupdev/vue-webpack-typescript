@@ -2,13 +2,14 @@
 
 ## [v0.5.1] (2017-03-23)
 
-** Fixes **
+**Fixes**
 
 * Update generated readme
 
 ## [v0.5.0] (2017-03-23)
 
-** Features **
+
+**Features**
 
 * Implement mocha for unit testing
 * Split webpack configuration into multiple files
@@ -16,55 +17,62 @@
 
 ## [v0.4.1] (2017-03-17)
 
-** Fixes **
+**Fixes**
 
 * Fix missing bootstrap.css
 
+
 ## [v0.4.0] (2017-03-17)
 
-** Features **
+**Features**
 
 * Uplift to Vue 2.2
 * Refactor tests
 * Use es2015 style imports
 
-** Fixes **
+**Fixes**
 
-* Vue router is not a constructor [#6]
+* Vue router is not a constructor - @paulvanbladel [#6]
 * Typescript lint task not working
+
 
 ## [v0.3.1] (2017-02-20)
 
-** Features **
+**Features**
 
 * Add barrels
 
+
 ## [v0.3.0] (2017-02-20)
 
-** Features **
+**Features**
 
-* Fix resources path for development [#3]
-* Use webpack-dev-server for development [#3]
+* Fix resources path for development - @rorisme [#3]
+* Use webpack-dev-server for development - @rorisme [#3]
 
 
 ## [v0.2.0] (2017-02-17)
 
-** Features **
+**Features**
 
-*  Migrate to webpack 2 [#2]
+*  Migrate to webpack 2 - @ethanrubio [#2]
 
 
 ## [v0.1.1] (2017-01-30)
 
-** Fixes **
+**Fixes**
 
-*  Add clean-css-cli dependency which was missing [#1]
+*  Add clean-css-cli dependency which was missing - @coding2012 [#1]
 
 
 ## v0.1.0 (2017-01-24)
 
 *  Initial release
 
+[#6]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/6
+[#3]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/3
+[#2]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/2
+[#1]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/1
 [v0.5.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.5.0...v0.5.1
 [v0.5.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.4.1...v0.5.0
 [v0.4.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.4.0...v0.4.1
