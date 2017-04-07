@@ -4,7 +4,7 @@
 
 **Features**
 
-* Implement chrome test debugging
+* Implement chrome test debugging [#12]
 * Update chai and sinon assertions
 
 ## [v0.5.1] (2017-03-23)
@@ -75,10 +75,12 @@
 
 *  Initial release
 
+[#12]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/12
 [#6]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/6
 [#3]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/3
 [#2]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/2
 [#1]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/1
+[v0.6.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.5.1...v0.6.0
 [v0.5.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.5.0...v0.5.1
 [v0.5.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.4.1...v0.5.0
 [v0.4.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.4.0...v0.4.1
