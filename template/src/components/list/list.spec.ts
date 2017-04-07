@@ -1,5 +1,5 @@
 import Component from 'vue-class-component';
-import {expect} from 'chai';
+import { expect } from 'chai';
 import { ComponentTest } from '../../util/component-test';
 import { ListComponent } from './list';
 
@@ -28,7 +28,9 @@ describe('List component', () => {
     directiveTest.createComponent();
 
     await directiveTest.execute((vm) => { // ensure Vue has bootstrapped/run change detection
-      expect(vm.$el.querySelectorAll('ul li').length).toBe(3);
+      debugger;
+      console.log(vm.$el.querySelectorAll('.content ul li'));
+      expect(vm.$el.querySelectorAll('.content ul li').length).to.equal(3);
     });
   });
 });

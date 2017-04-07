@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import {SinonSpy} from 'sinon';
+import { SinonSpy } from 'sinon';
 import merge from 'lodash.merge';
 import { ILogger } from './log';
 
@@ -7,16 +7,7 @@ export interface IComponents {
   [key: string]: Vue.Component;
 }
 
-interface IExecuteCallback {
-  (vm: Vue): void;
-}
-
-export interface IComponentTest {
-  createComponent(createOptions?: any): void;
-  execute(callback: IExecuteCallback): void;
-}
-
-export class ComponentTest implements IComponentTest {
+export class ComponentTest {
 
   public vm: Vue;
 
@@ -32,8 +23,9 @@ export class ComponentTest implements IComponentTest {
     this.vm = new Vue(options).$mount();
   }
 
-  public execute(callback: IExecuteCallback): void {
-    Vue.nextTick(callback.bind(this, this.vm));
+  public async execute(callback: (vm: Vue) => Promise<void> | void): Promise<void> {
+    await Vue.nextTick();
+    await callback(this.vm);
   }
 
 }

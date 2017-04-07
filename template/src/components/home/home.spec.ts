@@ -1,6 +1,6 @@
-import {expect} from 'chai';
-import {HomeComponent} from './home';
-import {ComponentTest} from '../../util/component-test';
+import { expect } from 'chai';
+import { HomeComponent } from './home';
+import { ComponentTest } from '../../util/component-test';
 
 describe('Home component', () => {
   let directiveTest: ComponentTest;
@@ -12,7 +12,8 @@ describe('Home component', () => {
   it('should render correct contents', async () => {
     directiveTest.createComponent();
     await directiveTest.execute((vm) => {
-      expect(vm.$el.querySelector('.package').textContent).toBe('vue-webpack-typescript');
+      debugger;
+      expect(vm.$el.querySelector('.package').textContent).to.equal('vue-webpack-typescript');
     });
   });
 });

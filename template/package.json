@@ -27,6 +27,7 @@
     "sass": "node-sass --output ./src/css ./src/sass",
     "serve": "http-server dist/ -o",
     "test": "cross-env NODE_ENV=development karma start karma.unit.js",
+    "test:debug": "cross-env NODE_ENV=development karma start karma.debug.js",
     "test:watch": "cross-env NODE_ENV=development karma start karma.unit.js --singleRun=false --auto-watch"
   },
   "dependencies": {
@@ -79,7 +80,6 @@
     "remap-istanbul": "~0.9.1",
     "rimraf": "~2.6.1",
     "sinon": "~2.1.0",
-    "ts-loader": "~2.0.2",
     "tslint": "~4.5.1",
     "tslint-loader": "~3.4.3",
     "typescript": "~2.2.1",
