@@ -1,5 +1,12 @@
 # Change log
 
+## [v0.6.0] (2017-04-07)
+
+**Features**
+
+* Implement chrome test debugging
+* Update chai and sinon assertions
+
 ## [v0.5.1] (2017-03-23)
 
 **Fixes**
@@ -7,7 +14,6 @@
 * Update generated readme
 
 ## [v0.5.0] (2017-03-23)
-
 
 **Features**
 

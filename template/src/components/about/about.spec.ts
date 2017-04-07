@@ -1,10 +1,10 @@
-import Sinon from 'sinon';
-import {expect} from 'chai';
+import { spy, assert } from 'sinon';
+import { expect } from 'chai';
 import Component from 'vue-class-component';
 import { ComponentTest, MockLogger } from '../../util/component-test';
 import { AboutComponent } from './about';
 
-let loggerSpy = Sinon.spy();
+let loggerSpy = spy();
 
 @Component({
   template: require('./about.html')
@@ -24,11 +24,12 @@ describe('About component', () => {
   });
 
   it('should render correct contents', async () => {
+    debugger;
     directiveTest.createComponent();
 
     await directiveTest.execute((vm) => {
-      expect(vm.$el.querySelector('.repo-link').getAttribute('href')).toBe('https://github.com/ducksoupdev/vue-webpack-typescript');
-      expect(loggerSpy).toHaveBeenCalledWith('about is ready!');
+      expect(vm.$el.querySelector('.repo-link').getAttribute('href')).to.equal('https://github.com/ducksoupdev/vue-webpack-typescript');
+      assert.calledWith(loggerSpy, 'about is ready!');
     });
   });
 });

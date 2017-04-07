@@ -19,8 +19,9 @@ $ npm run dev
 ### What's Included
 
 - `npm run dev`: Webpack + Typescript with proper config for source maps & hot-reload.
-- `npm test`: Mocha-based unit tests
-- `npm run test:watch`: Mocha-based unit tests with hot-reload
+- `npm test`: Mocha unit tests
+- `npm run test:debug`: Debug Mocha unit tests in Chrome
+- `npm run test:watch`: Fast feedback Mocha unit tests with hot-reload
 - `npm run coverage`: Karma coverage reporter
 - `npm run lint`: Lint all Typescript files
 - `npm run build`: build with HTML/CSS/JS minification.
