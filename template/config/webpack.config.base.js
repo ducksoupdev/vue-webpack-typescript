@@ -1,5 +1,4 @@
 const helpers = require("./helpers"),
-  DefinePlugin = require('webpack/lib/DefinePlugin'),
   CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let config = {
@@ -29,12 +28,6 @@ let config = {
       {from: 'src/assets', to: '../assets'},
       {from: 'src/css', to: '../css'}
     ]),
-    new DefinePlugin({
-      'process.env': {
-        'ENV': process.env.NODE_ENV,
-        'NODE_ENV': process.env.NODE_ENV
-      }
-    })
   ]
 };
 

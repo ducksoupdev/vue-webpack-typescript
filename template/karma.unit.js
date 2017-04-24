@@ -1,4 +1,4 @@
-var webpackConfig = require('./config/webpack.config.base');
+var webpackConfig = require('./config/webpack.config.test');
 
 module.exports = function(config) {
   config.set({
@@ -11,10 +11,7 @@ module.exports = function(config) {
     preprocessors: {
       'src/test.ts': ['webpack']
     },
-    webpack: {
-      resolve: webpackConfig.resolve,
-      module: webpackConfig.module
-    },
+    webpack: webpackConfig,
     webpackServer: { noInfo: true },
     reporters: ['mocha'],
     port: 9876,

@@ -1,5 +1,7 @@
 const helpers = require("./helpers"),
-  webpackConfig = require("./webpack.config.base")
+  webpackConfig = require("./webpack.config.base"),
+  DefinePlugin = require('webpack/lib/DefinePlugin'),
+  env = require('../environment/dev.env');
 
 webpackConfig.devServer = {
   port: 8080,
@@ -9,5 +11,11 @@ webpackConfig.devServer = {
   contentBase: './src',
   open: true
 };
+
+webpackConfig.plugins = [...webpackConfig.plugins,
+  new DefinePlugin({
+    'process.env': env
+  })
+]
 
 module.exports = webpackConfig;
