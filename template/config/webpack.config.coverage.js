@@ -1,4 +1,6 @@
-const webpackConfig = require("./webpack.config.base");
+const webpackConfig = require("./webpack.config.base")
+  DefinePlugin = require('webpack/lib/DefinePlugin'),
+  env = require('../environment/dev.env');
 
 webpackConfig.module.rules[1].query = {
   compilerOptions: {
@@ -23,5 +25,11 @@ webpackConfig.module.rules = [...webpackConfig.module.rules,
 ];
 
 webpackConfig.devtool = "inline-source-map";
+
+webpackConfig.plugins = [...webpackConfig.plugins,
+  new DefinePlugin({
+    'process.env': env
+  })
+];
 
 module.exports = webpackConfig;
