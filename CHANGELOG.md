@@ -1,5 +1,11 @@
 # Change log
 
+## [v0.7.1] (2017-06-30)
+
+**Fixes**
+
+* Fix misspelling of project - @dlb46 [#17]
+
 ## [v0.7.0] (2017-04-28)
 
 **Features**
@@ -81,12 +87,14 @@
 
 *  Initial release
 
+[#17]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/17
 [#15]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/15
 [#12]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/12
 [#6]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/6
 [#3]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/3
 [#2]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/2
 [#1]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/1
+[v0.7.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.7.0...v0.7.1
 [v0.7.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.6.0...v0.7.0
 [v0.6.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.5.1...v0.6.0
 [v0.5.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.5.0...v0.5.1
