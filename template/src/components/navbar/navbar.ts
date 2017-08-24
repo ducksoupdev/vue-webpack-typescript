@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Component, watch } from 'vue-property-decorator';
+import { Component, Watch } from 'vue-property-decorator';
 import { Link } from './link';
 import { Logger } from '../../util/log';
 
@@ -20,7 +20,7 @@ export class NavbarComponent extends Vue {
         new Link('List', '/list')
     ];
 
-    @watch('$route.path')
+    @Watch('$route.path')
     pathChanged() {
         this.logger.info('Changed current path to: ' + this.$route.path);
     }

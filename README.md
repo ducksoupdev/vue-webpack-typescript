@@ -1,8 +1,8 @@
 # webpack-typescript
 
-> A Vue 2.2 Webpack and Typescript setup with hot reload, unit testing, code coverage, sass and bundling/minification.
+> A Vue, Webpack and Typescript setup with hot reload, unit testing, code coverage, sass and bundling/minification.
 
-> This template is for Vue 2.2
+> This template is for Vue 2.4. See the [changelog](CHANGELOG.md) for updates.
 
 ### Usage
 
@@ -18,7 +18,7 @@ $ npm run dev
 
 ### What's Included
 
-- `npm run dev`: Webpack + Typescript with proper config for source maps & hot-reload.
+- `npm run dev`: Webpack + Typescript with config for source maps & hot-reload
 - `npm test`: Mocha unit tests
 - `npm run test:debug`: Debug Mocha unit tests in Chrome
 - `npm run test:watch`: Fast feedback Mocha unit tests with hot-reload

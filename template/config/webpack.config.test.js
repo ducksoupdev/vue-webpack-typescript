@@ -1,6 +1,7 @@
 var webpack = require('webpack'),
     webpackConfig = require('./webpack.config.base'),
     DefinePlugin = require('webpack/lib/DefinePlugin'),
+    SourceMapDevToolPlugin = require('webpack/lib/SourceMapDevToolPlugin'),
     env = require('../environment/dev.env');
 
 webpackConfig.module.rules = [{
@@ -22,7 +23,7 @@ webpackConfig.module.rules = [{
 ];
 
 webpackConfig.plugins = [...webpackConfig.plugins,
-  new webpack.SourceMapDevToolPlugin({
+  new SourceMapDevToolPlugin({
     filename: null, // if no value is provided the sourcemap is inlined
     test: /\.(ts|js)($|\?)/i
   }),

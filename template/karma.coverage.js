@@ -30,11 +30,7 @@ module.exports = function (config) {
     preprocessors: {
       'src/test.ts': ['webpack']
     },
-    webpack: {
-      devtool: 'inline-source-map',
-      resolve: webpackConfig.resolve,
-      module: webpackConfig.module
-    },
+    webpack: webpackConfig,
     webpackServer: {
       noInfo: true
     },
@@ -52,7 +48,10 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
+    mime: {
+      'text/x-typescript': ['ts']
+    },
     singleRun: true,
     concurrency: Infinity
   });

@@ -1,5 +1,12 @@
 # Change log
 
+## [v0.8.0] (2017-08-24)
+
+**Features**
+
+* Uplift npm packages - Vue 2.4, Webpack 3.5, Typescript 2.4
+* Remove PhantomJS
+
 ## [v0.7.1] (2017-06-30)
 
 **Fixes**
@@ -94,6 +101,7 @@
 [#3]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/3
 [#2]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/2
 [#1]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/1
+[v0.8.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.7.1...v0.8.0
 [v0.7.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.7.0...v0.7.1
 [v0.7.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.6.0...v0.7.0
 [v0.6.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.5.1...v0.6.0
