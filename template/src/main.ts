@@ -1,5 +1,7 @@
-import * as Vue from 'vue';
+import Vue from 'vue';
 import VueRouter from 'vue-router';
+
+import './sass/main.scss';
 
 import { HomeComponent } from './components/home';
 import { AboutComponent } from './components/about';

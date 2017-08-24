@@ -1,8 +1,8 @@
 var webpack = require('webpack'),
-    webpackConfig = require('./webpack.config.base'),
-    DefinePlugin = require('webpack/lib/DefinePlugin'),
-    SourceMapDevToolPlugin = require('webpack/lib/SourceMapDevToolPlugin'),
-    env = require('../environment/dev.env');
+  webpackConfig = require('./webpack.config.base'),
+  DefinePlugin = require('webpack/lib/DefinePlugin'),
+  SourceMapDevToolPlugin = require('webpack/lib/SourceMapDevToolPlugin'),
+  env = require('../environment/dev.env');
 
 webpackConfig.module.rules = [{
     test: /\.ts$/,
@@ -19,6 +19,23 @@ webpackConfig.module.rules = [{
     test: /\.html$/,
     loader: 'raw-loader',
     exclude: ['./src/index.html']
+  },
+  {
+    test: /\.scss$/,
+    use: [{
+        loader: 'style-loader'
+      },
+      {
+        loader: 'css-loader'
+      },
+      {
+        loader: 'sass-loader'
+      }
+    ]
+  },
+  {
+    test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
+    loader: 'url-loader?limit=8192'
   }
 ];
 

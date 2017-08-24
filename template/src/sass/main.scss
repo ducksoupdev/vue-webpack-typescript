@@ -1,5 +1,7 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
 html, body, #app-main {
     height: 100%;
 }
-
-@import '../components/home/home';

@@ -24,6 +24,6 @@ $ npm run dev
 - `npm run test:watch`: Fast feedback Mocha unit tests with hot-reload
 - `npm run coverage`: Karma coverage reporter
 - `npm run lint`: Lint all Typescript files
-- `npm run build`: build with HTML/CSS/JS minification.
+- `npm run build`: build with HTML/CSS/JS minification and icon generation
 - `npm run ci:teamcity`: Teamcity CI integration
 - `npm run ci:jenkins`: Jenkins CI integration

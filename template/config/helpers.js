@@ -1,7 +1,7 @@
-const path = require("path");
+const path = require('path');
 
 // Helper functions
-const ROOT = path.resolve(__dirname, "..");
+const ROOT = path.resolve(__dirname, '..');
 
 function root(args) {
   args = Array.prototype.slice.call(arguments, 0);
