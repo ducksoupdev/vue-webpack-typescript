@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar';
 Vue.use(VueRouter);
 
 let router = new VueRouter({
+  mode: 'history',
   routes: [
     { path: '/', component: HomeComponent },
     { path: '/about', component: AboutComponent },
