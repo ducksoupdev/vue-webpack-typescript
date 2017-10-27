@@ -92,7 +92,7 @@ webpackConfig.plugins = [...webpackConfig.plugins,
     }
   }),
   new UglifyJsPlugin({
-    include: /\.min\.js$/,
+    include: /\.js$/,
     minimize: true
   }),
   new CompressionPlugin({
