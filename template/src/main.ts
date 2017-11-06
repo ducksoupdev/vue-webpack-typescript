@@ -8,21 +8,11 @@ import { AboutComponent } from './components/about';
 import { ListComponent } from './components/list';
 import { NavbarComponent } from './components/navbar';
 
-// register the plugin
-Vue.use(VueRouter);
-
-let router = new VueRouter({
-  mode: 'history',
-  routes: [
-    { path: '/', component: HomeComponent },
-    { path: '/about', component: AboutComponent },
-    { path: '/list', component: ListComponent },
-  ]
-});
+import { createRouter } from './router';
 
 new Vue({
   el: '#app-main',
-  router: router,
+  router: createRouter(),
   components: {
     'navbar': NavbarComponent
   }

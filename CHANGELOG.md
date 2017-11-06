@@ -1,5 +1,13 @@
 # Change log
 
+## [v1.0.0] (2017-11-06)
+
+**Features**
+
+* Add [uiv](https://uiv.wxsm.space/) for navbar dropdown
+* Move router config to `router.ts` with dynamic imports
+* Uplift npm packages - Vue 2.5, Webpack 3.8, Typescript 2.6
+
 ## [v0.10.0] (2017-11-06)
 
 **Features**
@@ -116,6 +124,7 @@
 [#3]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/3
 [#2]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/2
 [#1]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/1
+[v1.0.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.10.0...v1.0.0
 [v0.10.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.9.0...v0.10.0
 [v0.9.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.8.0...v0.9.0
 [v0.8.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.7.1...v0.8.0
