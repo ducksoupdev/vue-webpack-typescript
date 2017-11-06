@@ -1,11 +1,8 @@
 const glob = require('glob'),
   path = require('path'),
-  UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin'),
-  HtmlWebpackPlugin = require('html-webpack-plugin'),
   CompressionPlugin = require('compression-webpack-plugin'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
   PurifyCSSPlugin = require('purifycss-webpack'),
-  FaviconsWebpackPlugin = require('favicons-webpack-plugin'),
   autoprefixer = require('autoprefixer'),
   webpackConfig = require('./webpack.config.base'),
   helpers = require('./helpers'),
@@ -25,18 +22,34 @@ const purifyCss = new PurifyCSSPlugin({
   }
 });
 
+webpackConfig.output = {
+  path: helpers.root('/dist'),
+  filename: 'index.js',
+  library: '[name]',
+  libraryTarget: 'umd',
+  umdNamedDefine: true
+};
+
+webpackConfig.externals = {
+  'axios': 'axios',
+  'vue': 'vue',
+  'vue-class-component': 'vue-class-component',
+  'vue-property-decorator': 'vue-property-decorator',
+  'vue-router': 'vue-router'
+};
+
 webpackConfig.module.rules = [...webpackConfig.module.rules,
   {
     test: /\.scss$/,
     use: extractSass.extract({
       use: [{
-          loader: 'css-loader',
-          options: {
-            minimize: true,
-            sourceMap: true,
-            importLoaders: 2
-          }
-        },
+        loader: 'css-loader',
+        options: {
+          minimize: true,
+          sourceMap: true,
+          importLoaders: 2
+        }
+      },
         {
           loader: 'postcss-loader',
           options: {
@@ -74,35 +87,13 @@ webpackConfig.module.rules[0].options = {
 webpackConfig.plugins = [...webpackConfig.plugins,
   extractSass,
   purifyCss,
-  new HtmlWebpackPlugin({
-    inject: true,
-    template: helpers.root('/src/index.html'),
-    favicon: helpers.root('/src/favicon.ico'),
-    minify: {
-      removeComments: true,
-      collapseWhitespace: true,
-      removeRedundantAttributes: true,
-      useShortDoctype: true,
-      removeEmptyAttributes: true,
-      removeStyleLinkTypeAttributes: true,
-      keepClosingSlash: true,
-      minifyJS: true,
-      minifyCSS: true,
-      minifyURLs: true
-    }
-  }),
-  new UglifyJsPlugin({
-    include: /\.js$/,
-    minimize: true
-  }),
   new CompressionPlugin({
     asset: '[path].gz[query]',
     test: /\.min\.js$/
   }),
   new DefinePlugin({
     'process.env': env
-  }),
-  new FaviconsWebpackPlugin(helpers.root('/src/icon.png'))
+  })
 ];
 
 module.exports = webpackConfig;
