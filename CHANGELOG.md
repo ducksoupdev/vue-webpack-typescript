@@ -1,5 +1,11 @@
 # Change log
 
+## [v0.10.0] (2017-11-06)
+
+**Features**
+
+* HTML5 history support - @davidmeirlevy [#22]
+
 ## [v0.9.0] (2017-08-24)
 
 **Features**
@@ -102,6 +108,7 @@
 
 *  Initial release
 
+[#22]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/22
 [#17]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/17
 [#15]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/15
 [#12]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/12
@@ -109,6 +116,7 @@
 [#3]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/3
 [#2]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/2
 [#1]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/1
+[v0.10.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.9.0...v0.10.0
 [v0.9.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.8.0...v0.9.0
 [v0.8.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.7.1...v0.8.0
 [v0.7.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.7.0...v0.7.1
