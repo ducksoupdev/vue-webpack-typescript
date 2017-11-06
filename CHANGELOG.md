@@ -1,5 +1,13 @@
 # Change log
 
+## [v1.0.0] (2017-11-06)
+
+**Features**
+
+* Add [uiv](https://uiv.wxsm.space/) for navbar dropdown
+* Move router config to `router.ts` with dynamic imports
+* Uplift npm packages - Vue 2.5, Webpack 3.8, Typescript 2.6
+
 ## [v0.10.0] (2017-11-06)
 
 **Features**
