@@ -22,6 +22,8 @@ const purifyCss = new PurifyCSSPlugin({
   }
 });
 
+webpackConfig.entry.main = helpers.root('/src/module.ts');
+
 webpackConfig.output = {
   path: helpers.root('/dist'),
   filename: 'index.js',
