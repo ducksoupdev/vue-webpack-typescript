@@ -2,17 +2,18 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import './sass/main.scss';
+import {NavbarComponent} from './components/navbar';
 
-import { HomeComponent } from './components/home';
-import { AboutComponent } from './components/about';
-import { ListComponent } from './components/list';
-import { NavbarComponent } from './components/navbar';
+import {createRoutes} from './module';
 
-import { createRouter } from './router';
+
+// register the plugin
+Vue.use(VueRouter);
+const router = new VueRouter({mode: 'history', routes: createRoutes()});
 
 new Vue({
   el: '#app-main',
-  router: createRouter(),
+  router,
   components: {
     'navbar': NavbarComponent
   }

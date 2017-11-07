@@ -4,16 +4,23 @@
   "version": "1.0.0",
   "author": "{{ author }}",
   "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "engines": {
     "node": ">=6",
     "npm": ">=3"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production npm run clean && npm run test && npm run compile",
+    "module": "cross-env NODE_ENV=production npm run clean && npm run test && npm run compile:module",
+    "build:parts": "npm run sass && npm run compile",
     "ci:teamcity": "karma --env=tc start karma.coverage.js && npm run coverage:remap",
     "ci:jenkins": "karma --env=jk start karma.coverage.js && npm run coverage:remap",
     "clean": "rimraf dist && rimraf coverage",
     "compile": "webpack --config config/webpack.config.prod.js",
+    "compile:module": "webpack --config config/webpack.config.module.js",
+    "prepublishOnly": "npm run module",
+    "node-module": "webpack --config config/webpack.config.module.js",
     "coverage": "npm run coverage:run && npm run coverage:remap && npm run coverage:open",
     "coverage:open": "opn coverage/html-ts/index.html",
     "coverage:remap": "remap-istanbul -i coverage/json/coverage-final.json -o coverage/html-ts -t html",

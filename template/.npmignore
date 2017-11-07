@@ -1,0 +1,7 @@
+# IntelliJ project files
+.idea/
+src/
+config/
+environment/
+karma.*.js
+webpack.*.js
