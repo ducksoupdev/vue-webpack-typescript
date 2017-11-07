@@ -11,7 +11,7 @@ const routesList = [
 
 /**
  *
- * @param {string} prefix
+ * @param {string} [prefix]
  * @returns RouteConfig[]}
  */
 export function routes(prefix: string = '') {
