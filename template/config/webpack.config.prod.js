@@ -1,5 +1,6 @@
 const glob = require('glob'),
   path = require('path'),
+  CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin'),
   UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   CompressionPlugin = require('compression-webpack-plugin'),
@@ -72,6 +73,16 @@ webpackConfig.module.rules[0].options = {
 };
 
 webpackConfig.plugins = [...webpackConfig.plugins,
+  new CommonsChunkPlugin({
+    name: 'vendor',
+    minChunks: function(module){
+      return module.context && module.context.indexOf('node_modules') !== -1;
+    }
+  }),
+  new CommonsChunkPlugin({
+    name: 'manifest',
+    minChunks: Infinity
+  }),
   extractSass,
   purifyCss,
   new HtmlWebpackPlugin({
@@ -92,12 +103,12 @@ webpackConfig.plugins = [...webpackConfig.plugins,
     }
   }),
   new UglifyJsPlugin({
-    include: /\.min\.js$/,
+    include: /\.js$/,
     minimize: true
   }),
   new CompressionPlugin({
     asset: '[path].gz[query]',
-    test: /\.min\.js$/
+    test: /\.js$/
   }),
   new DefinePlugin({
     'process.env': env
