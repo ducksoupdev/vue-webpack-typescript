@@ -1,6 +1,7 @@
 # webpack-typescript
 
-> A Vue, Webpack and Typescript setup with hot reload, unit testing, code coverage, sass and bundling/minification.
+> A Vue, Webpack and Typescript setup with hot reload, dynamic imports, unit testing, 
+code coverage, sass and bundling/minification.
 
 > This template is for Vue 2.5. See the [changelog](CHANGELOG.md) for updates.
 
@@ -24,6 +25,6 @@ $ npm run dev
 - `npm run test:watch`: Fast feedback Mocha unit tests with hot-reload
 - `npm run coverage`: Karma coverage reporter
 - `npm run lint`: Lint all Typescript files
-- `npm run build`: build with HTML/CSS/JS minification and icon generation
+- `npm run build`: build with HTML/CSS/JS minification, code splitting and icon generation
 - `npm run ci:teamcity`: Teamcity CI integration
 - `npm run ci:jenkins`: Jenkins CI integration

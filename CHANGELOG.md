@@ -1,5 +1,14 @@
 # Change log
 
+## [v1.1.0] (2017-11-09)
+
+**Features**
+
+* Implement component hot-reloading without browser refresh [#29]
+* Add dynamic component loading
+* Add webpack code-splitting
+* Add manifest and vendor bundle creation
+
 ## [v1.0.0] (2017-11-06)
 
 **Features**
@@ -116,6 +125,7 @@
 
 *  Initial release
 
+[#29]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/29
 [#22]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/22
 [#17]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/17
 [#15]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/15
@@ -124,6 +134,7 @@
 [#3]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/3
 [#2]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/2
 [#1]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/1
+[v1.1.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.10.0...v1.0.0
 [v0.10.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.9.0...v0.10.0
 [v0.9.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.8.0...v0.9.0
