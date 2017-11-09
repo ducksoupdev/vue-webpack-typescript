@@ -20,7 +20,7 @@
     "coverage:run": "cross-env NODE_ENV=development karma start karma.coverage.js",
     "dev": "webpack-dev-server --hot --inline",
     "lint": "tslint src/**/*.ts",
-    "serve": "http-server dist/ -o",
+    "serve": "http-server dist/ -g -o",
     "test": "cross-env NODE_ENV=development karma start karma.unit.js",
     "test:debug": "cross-env NODE_ENV=development karma start karma.debug.js",
     "test:watch": "cross-env NODE_ENV=development karma start karma.unit.js --singleRun=false --auto-watch"
@@ -37,6 +37,7 @@
     "@types/mocha": "~2.2.44",
     "@types/node": "~8.0.47",
     "@types/sinon": "~2.3.7",
+    "@types/webpack-env": "^1.13.2",
     "autoprefixer": "^7.1.6",
     "awesome-typescript-loader": "~3.3.0",
     "bootstrap-sass": "^3.3.7",
@@ -84,6 +85,7 @@
     "tslint-loader": "~3.5.3",
     "typescript": "~2.6.1",
     "url-loader": "^0.6.2",
+    "vue-hot-reload-api": "^2.2.0",
     "webpack": "~3.8.1",
     "webpack-dev-server": "~2.9.4"
   }
