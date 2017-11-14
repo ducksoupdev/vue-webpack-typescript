@@ -1,4 +1,5 @@
 const helpers = require('./helpers'),
+  NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin'),
   CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let config = {
@@ -38,6 +39,7 @@ let config = {
     ],
   },
   plugins: [
+    new NamedModulesPlugin(),
     new CopyWebpackPlugin([{
       from: 'src/assets',
       to: './assets'

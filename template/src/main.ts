@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import { isHot, makeHot, reload } from './util/hot-reload';
+import { makeHot, reload } from './util/hot-reload';
 import { createRouter } from './router';
 
 const navbarComponent = () => import('./components/navbar').then(({ NavbarComponent }) => NavbarComponent);
@@ -8,7 +8,7 @@ const navbarComponent = () => import('./components/navbar').then(({ NavbarCompon
 
 import './sass/main.scss';
 
-if (process.env.ENV === 'development' && isHot()) {
+if (process.env.ENV === 'development' && module.hot) {
   const navbarModuleId = './components/navbar';
 
   // first arguments for `module.hot.accept` and `require` methods have to be static strings

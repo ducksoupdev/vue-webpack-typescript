@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter, { Location, Route, RouteConfig } from 'vue-router';
-import { isHot, makeHot, reload } from './util/hot-reload';
+import { makeHot, reload } from './util/hot-reload';
 
 const homeComponent = () => import('./components/home').then(({ HomeComponent }) => HomeComponent);
 const aboutComponent = () => import('./components/about').then(({ AboutComponent }) => AboutComponent);
@@ -9,7 +9,7 @@ const listComponent = () => import('./components/list').then(({ ListComponent })
 // const aboutComponent = () => import(/* webpackChunkName: 'about' */'./components/about').then(({ AboutComponent }) => AboutComponent);
 // const listComponent = () => import(/* webpackChunkName: 'list' */'./components/list').then(({ ListComponent }) => ListComponent);
 
-if (process.env.ENV === 'development' && isHot()) {
+if (process.env.ENV === 'development' && module.hot) {
   const homeModuleId = './components/home';
   const aboutModuleId = './components/about';
   const listModuleId = './components/list';
