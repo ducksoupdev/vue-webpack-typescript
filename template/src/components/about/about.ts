@@ -1,6 +1,5 @@
-import Vue from 'vue';
-import Component from 'vue-class-component';
-import {Logger} from '../../util/log';
+import { Component, Vue } from 'vue-property-decorator';
+import { Logger } from '../../util/log';
 
 @Component({
     template: require('./about.html')

@@ -1,6 +1,5 @@
 import { Collapse, Dropdown } from 'uiv';
-import Vue from 'vue';
-import { Component, Watch } from 'vue-property-decorator';
+import { Component, Vue, Watch } from 'vue-property-decorator';
 import { Link } from './link';
 import { Logger } from '../../util/log';
 

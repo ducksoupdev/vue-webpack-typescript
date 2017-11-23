@@ -1,5 +1,12 @@
 # Change log
 
+## [v1.2.0] (2017-11-23)
+
+**Features**
+
+* Update sample components to use correct types
+* Uplift npm packages
+
 ## [v1.1.1] (2017-11-14)
 
 **Fixes**
@@ -140,6 +147,7 @@
 [#3]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/3
 [#2]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/2
 [#1]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/1
+[v1.2.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v1.1.1...v1.2.0
 [v1.1.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v1.1.0...v1.1.1
 [v1.1.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v0.10.0...v1.0.0
