@@ -26,21 +26,25 @@ if (process.env.ENV === 'development' && module.hot) {
     module.hot.accept('./components/list', () => reload(listModuleId, (require('./components/list') as any).ListComponent)))
 }{{/hotReload}}
 
-Vue.use(VueRouter)
+export function createRoutes(prefix: string = ''): RouteConfig[] {
+  return [
+    {
+      path: prefix + '/',
+      component: homeComponent,
+    },
+    {
+      path: prefix + '/about',
+      component: aboutComponent,
+    },
+    {
+      path: prefix + '/list',
+      component: listComponent,
+    }
+  ];
+}
 
-export const createRoutes: () => RouteConfig[] = () => [
-  {
-    path: '/',
-    component: homeComponent
-  },
-  {
-    path: '/about',
-    component: aboutComponent
-  },
-  {
-    path: '/list',
-    component: listComponent
-  }
-]
 
-export const createRouter = () => new VueRouter({ mode: 'history', routes: createRoutes() })
+export const createRouter = () => {
+  Vue.use(VueRouter);
+  return new VueRouter({ mode: 'history', routes: createRoutes() });
+};
