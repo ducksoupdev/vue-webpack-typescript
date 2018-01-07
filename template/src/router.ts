@@ -31,7 +31,7 @@ let routeComponentList = [];
 routeComponentConfigurationList.forEach((routeComponentConfiguration: IRouteComponentConfiguration) => {
   // add empty string is necessary to get import to work
   let routeComponent = {
-    'component': () => import('' + routeComponentConfiguration.componentPath).then((Component) => Component[routeComponentConfiguration.componentName]),
+    'component': () => import('' + routeComponentConfiguration.componentPath).then((component) => component[routeComponentConfiguration.componentName]),
     'path': routeComponentConfiguration.urlPath
   };
   
