@@ -1,4 +1,4 @@
-const webpackConfig = require('./webpack.config.test');
+const webpackConfig = require('./webpack.config.test')
 
 webpackConfig.module.rules = [...webpackConfig.module.rules,
   {
@@ -13,6 +13,6 @@ webpackConfig.module.rules = [...webpackConfig.module.rules,
       esModules: true
     }
   }
-];
+]
 
-module.exports = webpackConfig;
+module.exports = webpackConfig

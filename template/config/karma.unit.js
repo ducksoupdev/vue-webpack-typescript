@@ -1,8 +1,8 @@
-var webpackConfig = require('./config/webpack.config.test');
+var webpackConfig = require('./webpack.config.test')
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
-    basePath: '',
+    basePath: '..',
     frameworks: ['mocha', 'chai', 'sinon'],
     files: [
       'node_modules/es6-promise/dist/es6-promise.auto.js',
@@ -23,5 +23,5 @@ module.exports = function(config) {
       'text/x-typescript': ['ts']
     },
     singleRun: true
-  });
-};
+  })
+}

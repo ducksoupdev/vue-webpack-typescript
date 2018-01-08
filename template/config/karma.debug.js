@@ -1,13 +1,13 @@
-var webpackConfig = require('./config/webpack.config.test');
+var webpackConfig = require('./webpack.config.test')
 
 module.exports = function (config) {
   config.set({
-    basePath: '',
+    basePath: '..',
     frameworks: ['source-map-support', 'mocha', 'chai', 'sinon'],
     files: [
       'node_modules/es6-promise/dist/es6-promise.auto.js',
       {
-        pattern: "node_modules/es6-promise/dist/es6-promise.auto.map",
+        pattern: 'node_modules/es6-promise/dist/es6-promise.auto.map',
         watched: false,
         included: false,
         served: true
@@ -29,14 +29,14 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ["Chrome_with_debugging"],
+    browsers: ['Chrome_with_debugging'],
     customLaunchers: {
       Chrome_with_debugging: {
-        base: "Chrome",
-        flags: ["--remote-debugging-port=9222"],
+        base: 'Chrome',
+        flags: ['--remote-debugging-port=9222'],
         debug: true
       }
     },
     singleRun: false
-  });
-};
+  })
+}

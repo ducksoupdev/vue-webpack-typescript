@@ -1,22 +1,23 @@
-const glob = require('glob'),
-  path = require('path'),
-  CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin'),
-  UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin'),
-  HtmlWebpackPlugin = require('html-webpack-plugin'),
-  CompressionPlugin = require('compression-webpack-plugin'),
-  ExtractTextPlugin = require('extract-text-webpack-plugin'),
-  PurifyCSSPlugin = require('purifycss-webpack'),
-  FaviconsWebpackPlugin = require('favicons-webpack-plugin'),
-  autoprefixer = require('autoprefixer'),
-  webpackConfig = require('./webpack.config.base'),
-  helpers = require('./helpers'),
-  DefinePlugin = require('webpack/lib/DefinePlugin'),
-  env = require('../environment/prod.env');
+const glob = require('glob')
+const path = require('path')
+const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin')
+const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const PurifyCSSPlugin = require('purifycss-webpack')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const autoprefixer = require('autoprefixer')
+const webpackConfig = require('./webpack.config.base')
+const helpers = require('./helpers')
+const DefinePlugin = require('webpack/lib/DefinePlugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const env = require('../environment/prod.env')
 
 const extractSass = new ExtractTextPlugin({
   filename: 'css/[name].[contenthash].css',
   disable: process.env.NODE_ENV === 'development'
-});
+})
 
 const purifyCss = new PurifyCSSPlugin({
   paths: glob.sync(path.join(__dirname, '../src/**/*.html')),
@@ -24,34 +25,33 @@ const purifyCss = new PurifyCSSPlugin({
     info: true,
     whitelist: []
   }
-});
+})
 
 webpackConfig.module.rules = [...webpackConfig.module.rules,
   {
     test: /\.scss$/,
     use: extractSass.extract({
       use: [{
-          loader: 'css-loader',
-          options: {
-            minimize: true,
-            sourceMap: true,
-            importLoaders: 2
-          }
-        },
-        {
-          loader: 'postcss-loader',
-          options: {
-            plugins: () => [autoprefixer]
-          }
-        },
-        {
-          loader: 'sass-loader',
-          options: {
-            outputStyle: 'expanded',
-            sourceMap: true,
-            sourceMapContents: true
-          }
+        loader: 'css-loader',
+        options: {
+          minimize: false,
+          sourceMap: false,
+          importLoaders: 2
         }
+      },
+      {
+        loader: 'postcss-loader',
+        options: {
+          plugins: () => [autoprefixer],
+          sourceMap: false
+        }
+      },
+      {
+        loader: 'sass-loader',
+        options: {
+          sourceMap: false
+        }
+      }
       ],
       // use style-loader in development
       fallback: 'style-loader'
@@ -59,24 +59,36 @@ webpackConfig.module.rules = [...webpackConfig.module.rules,
   },
   {
     test: /\.(jpg|png|gif)$/,
-    loader: 'file-loader?name=assets/img/[name].[ext]'
+    loader: 'file-loader',
+    options: {
+      regExp: /(img\/.*)/,
+      name: '[name].[ext]',
+      publicPath: '../',
+      outputPath: 'assets/img/'
+    }
   },
   {
     test: /\.(eot|svg|ttf|woff|woff2)$/,
-    loader: 'file-loader?name=fonts/[name].[ext]'
+    loader: 'file-loader',
+    options: {
+      regExp: /(fonts\/.*)/,
+      name: '[name].[ext]',
+      publicPath: '../',
+      outputPath: 'fonts/'
+    }
   }
-];
+]
 
 // ensure ts lint fails the build
 webpackConfig.module.rules[0].options = {
   failOnHint: true
-};
+}
 
 webpackConfig.plugins = [...webpackConfig.plugins,
   new CommonsChunkPlugin({
     name: 'vendor',
-    minChunks: function(module){
-      return module.context && module.context.indexOf('node_modules') !== -1;
+    minChunks: function (module) {
+      return module.context && module.context.indexOf('node_modules') !== -1
     }
   }),
   new CommonsChunkPlugin({
@@ -85,6 +97,14 @@ webpackConfig.plugins = [...webpackConfig.plugins,
   }),
   extractSass,
   purifyCss,
+  new OptimizeCssAssetsPlugin({
+    cssProcessor: require('cssnano'),
+    cssProcessorOptions: {
+      discardUnused: false,
+      discardComments: { removeAll: true }
+    },
+    canPrint: true
+  }),
   new HtmlWebpackPlugin({
     inject: true,
     template: helpers.root('/src/index.html'),
@@ -114,6 +134,6 @@ webpackConfig.plugins = [...webpackConfig.plugins,
     'process.env': env
   }),
   new FaviconsWebpackPlugin(helpers.root('/src/icon.png'))
-];
+]
 
-module.exports = webpackConfig;
+module.exports = webpackConfig

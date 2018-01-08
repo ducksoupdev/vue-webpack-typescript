@@ -1,26 +1,26 @@
-var parseArgs = require('minimist');
-var webpackConfig = require('./config/webpack.config.coverage');
+var parseArgs = require('minimist')
+var webpackConfig = require('./webpack.config.coverage')
 
 var args = parseArgs(process.argv.slice(2), {
   string: ['env'],
   default: {
     'env': 'mocha'
   }
-});
+})
 
-var reporters = ['mocha', 'coverage'];
+var reporters = ['mocha', 'coverage']
 
 if (args.env === 'tc') {
-  reporters = ['teamcity', 'coverage'];
+  reporters = ['teamcity', 'coverage']
 }
 
 if (args.env === 'jk') {
-  reporters = ['junit', 'coverage'];
+  reporters = ['junit', 'coverage']
 }
 
 module.exports = function (config) {
   config.set({
-    basePath: '',
+    basePath: '..',
     frameworks: ['mocha', 'chai', 'sinon'],
     files: [
       'node_modules/es6-promise/dist/es6-promise.auto.js',
@@ -54,5 +54,5 @@ module.exports = function (config) {
     },
     singleRun: true,
     concurrency: Infinity
-  });
-};
+  })
+}

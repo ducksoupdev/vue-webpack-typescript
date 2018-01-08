@@ -1,5 +1,16 @@
 # Change log
 
+## [v1.3.0] (2018-01-31)
+
+**Features**
+
+* Minify CSS on build
+* Implement Bootstrap v4
+* Prompt for hot-reloading on project initialisation
+* Add `standard` for Javascript linting
+* Add `tslint-config-standard` for Typescript linting
+* Uplift npm packages
+
 ## [v1.2.1] (2018-01-08)
 
 **Features**
@@ -153,6 +164,7 @@
 [#3]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/3
 [#2]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/2
 [#1]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/1
+[v1.3.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v1.2.1...v1.3.0
 [v1.2.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v1.2.0...v1.2.1
 [v1.2.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v1.1.1...v1.2.0
 [v1.1.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v1.1.0...v1.1.1
