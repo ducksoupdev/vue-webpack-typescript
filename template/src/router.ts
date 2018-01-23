@@ -46,5 +46,5 @@ export function createRoutes(prefix: string = ''): RouteConfig[] {
 
 export const createRouter = () => {
   Vue.use(VueRouter);
-  return new VueRouter({ mode: 'history', routes: createRoutes() });
+  return new VueRouter({mode: 'history', routes: createRoutes()});
 };
