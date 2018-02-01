@@ -1,11 +1,8 @@
-const glob = require('glob')
-const path = require('path')
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin')
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const PurifyCSSPlugin = require('purifycss-webpack')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 const webpackConfig = require('./webpack.config.base')
@@ -17,14 +14,6 @@ const env = require('../environment/prod.env')
 const extractSass = new ExtractTextPlugin({
   filename: 'css/[name].[contenthash].css',
   disable: process.env.NODE_ENV === 'development'
-})
-
-const purifyCss = new PurifyCSSPlugin({
-  paths: glob.sync(path.join(__dirname, '../src/**/*.html')),
-  purifyOptions: {
-    info: true,
-    whitelist: []
-  }
 })
 
 webpackConfig.module.rules = [...webpackConfig.module.rules,
@@ -96,7 +85,6 @@ webpackConfig.plugins = [...webpackConfig.plugins,
     minChunks: Infinity
   }),
   extractSass,
-  purifyCss,
   new OptimizeCssAssetsPlugin({
     cssProcessor: require('cssnano'),
     cssProcessorOptions: {

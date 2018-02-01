@@ -1,5 +1,13 @@
 # Change log
 
+## [v1.3.1] (2018-02-01)
+
+**Features**
+
+* Implement Bootstrap-vue v2
+* Code cleanup
+* Uplift Typescript to v2.7.1
+
 ## [v1.3.0] (2018-01-31)
 
 **Features**
@@ -164,6 +172,7 @@
 [#3]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/3
 [#2]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/2
 [#1]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/1
+[v1.3.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v1.2.1...v1.3.0
 [v1.2.1]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v1.2.0...v1.2.1
 [v1.2.0]: https://github.com/ducksoupdev/vue-webpack-typescript/compare/v1.1.1...v1.2.0

@@ -1,13 +1,12 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'{{#hotReload}}
+import Vue from 'vue'{{#hotReload}}
 import { makeHot, reload } from './util/hot-reload'{{/hotReload}}
 import { createRouter } from './router'
 
 const navbarComponent = () => import('./components/navbar').then(({ NavbarComponent }) => NavbarComponent)
 // const navbarComponent = () => import(/* webpackChunkName: 'navbar' */'./components/navbar').then(({ NavbarComponent }) => NavbarComponent)
 
-import './sass/main.scss'
-{{#hotReload}}
+import './sass/main.scss'{{#hotReload}}
+
 if (process.env.ENV === 'development' && module.hot) {
   const navbarModuleId = './components/navbar'
 

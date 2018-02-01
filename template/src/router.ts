@@ -24,7 +24,8 @@ if (process.env.ENV === 'development' && module.hot) {
 
   makeHot(listModuleId, listComponent,
     module.hot.accept('./components/list', () => reload(listModuleId, (require('./components/list') as any).ListComponent)))
-}{{/hotReload}}
+}
+{{/hotReload}}
 
 Vue.use(VueRouter)
 

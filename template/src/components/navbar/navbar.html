@@ -1,12 +1,9 @@
-<nav :class="['navbar fixed-top navbar-expand-lg', inverted ? 'navbar-dark bg-dark' : 'navbar-light bg-light']">
-  <a class="navbar-brand" href="#">vue-webpack-typescript</a>
-  <button class="navbar-toggler" type="button" aria-controls="navbarNavAltMarkup"
-    aria-expanded="false" aria-label="Toggle navigation" @click="showNavbar=!showNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div :class="['collapse navbar-collapse', { 'show': showNavbar } ]">
-    <div class="navbar-nav">
-      <router-link v-for="link in links" :key="link.name" :to="link.path" :class="['nav-item', 'nav-link', {'active' : $route.path == link.path}]">\{{link.name}}</router-link>
-    </div>
-  </div>
-</nav>
+<b-navbar toggleable="md" type="dark" variant="dark" fixed="top">
+  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+  <b-navbar-brand href="#">{{ name }}</b-navbar-brand>
+  <b-collapse is-nav id="nav_collapse">
+    <b-navbar-nav>
+      <b-nav-item v-for="link in links" :key="link.name" :to="link.path" exact>\{{link.name}}</b-nav-item>
+    </b-navbar-nav>
+  </b-collapse>
+</b-navbar>

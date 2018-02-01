@@ -1,9 +1,9 @@
 # webpack-typescript
 
-> A Vue, Webpack, Typescript, Bootstrap setup with hot reload, dynamic imports, unit testing, 
-code coverage, sass, uncss and bundling/minification.
+> A Vue 2.5, Webpack 3.10, Typescript 2.7, Bootstrap 4.0 setup with hot reload, dynamic imports, unit testing, 
+code coverage, sass and bundling/minification.
 
-> This template is for Vue 2.5. See the [changelog](CHANGELOG.md) for updates.
+> See the [changelog](CHANGELOG.md) for updates.
 
 ### Usage
 
