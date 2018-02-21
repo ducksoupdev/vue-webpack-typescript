@@ -7,7 +7,7 @@ code coverage, sass and bundling/minification.
 
 ### Usage
 
-This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
+This is a project template for [vue-cli < 3.x](https://github.com/vuejs/vue-cli).
 
 ``` bash
 $ npm install -g vue-cli
