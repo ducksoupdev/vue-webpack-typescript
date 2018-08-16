@@ -4,18 +4,21 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const DefinePlugin = require('webpack/lib/DefinePlugin')
 const env = require('../environment/dev.env')
 
+webpackConfig.mode = "development"
+
 webpackConfig.module.rules = [...webpackConfig.module.rules,
   {
     test: /\.scss$/,
-    use: [{
-      loader: 'style-loader'
-    },
-    {
-      loader: 'css-loader'
-    },
-    {
-      loader: 'sass-loader'
-    }
+    use: [
+      {
+        loader: 'style-loader'
+      },
+      {
+        loader: 'css-loader'
+      },
+      {
+        loader: 'sass-loader'
+      }
     ]
   },
   {
