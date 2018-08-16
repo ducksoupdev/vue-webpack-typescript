@@ -12,7 +12,9 @@ module.exports = function (config) {
       'src/test.ts': ['webpack']
     },
     webpack: webpackConfig,
-    webpackServer: { noInfo: true },
+    webpackServer: {
+      noInfo: true
+    },
     reporters: ['mocha'],
     port: 9876,
     colors: true,

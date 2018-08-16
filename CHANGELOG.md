@@ -1,5 +1,13 @@
 # Change log
 
+## [v1.4.0] (2018-08-16)
+
+**Features**
+
+* Added instructions for installing the dependencies via yarn
+* Uplifted webpack to v4, TypeScript to v3, Karma to v3
+* Removed UglifyJsPlugin, extract-text-plugin, CommonChunksPlugin (depreciated)
+
 ## [v1.3.1] (2018-02-01)
 
 **Features**
@@ -115,7 +123,6 @@
 
 * Fix missing bootstrap.css
 
-
 ## [v0.4.0] (2017-03-17)
 
 **Features**
@@ -129,13 +136,11 @@
 * Vue router is not a constructor - @paulvanbladel [#6]
 * Typescript lint task not working
 
-
 ## [v0.3.1] (2017-02-20)
 
 **Features**
 
 * Add barrels
-
 
 ## [v0.3.0] (2017-02-20)
 
@@ -144,24 +149,21 @@
 * Fix resources path for development - @rorisme [#3]
 * Use webpack-dev-server for development - @rorisme [#3]
 
-
 ## [v0.2.0] (2017-02-17)
 
 **Features**
 
-*  Migrate to webpack 2 - @ethanrubio [#2]
-
+* Migrate to webpack 2 - @ethanrubio [#2]
 
 ## [v0.1.1] (2017-01-30)
 
 **Fixes**
 
-*  Add clean-css-cli dependency which was missing - @coding2012 [#1]
+* Add clean-css-cli dependency which was missing - @coding2012 [#1]
 
+## [v0.1.0] (2017-01-24)
 
-## v0.1.0 (2017-01-24)
-
-*  Initial release
+* Initial release
 
 [#29]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/29
 [#22]: https://github.com/ducksoupdev/vue-webpack-typescript/pull/22
